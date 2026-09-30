@@ -14,7 +14,7 @@ $sections=[
     2=>['label'=>'B', 'juz'=>'6-10'],
     3=>['label'=>'C', 'juz'=>'11-14'],
     4=>['label'=>'D', 'juz'=>'15-17'],
-    5=>['label'=>'E', 'juz'=>'Revise'],
+    5=>['label'=>'E', 'juz'=>'Revise any'],
 ];
 $currentSection = $sections[$weekOfMonth]?? $sections[5];
 ?>

@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'poppins',sans-serif;
     font-size: large;
@@ -5,6 +9,7 @@ body{
     color: white;
     text-align: center;
     height: 100%;
+    margin: 0;
     padding: 40px;
     background-image: url('img/Quran.jpg');
     background-repeat: no-repeat;
@@ -30,22 +35,22 @@ body{
 }
 .cards{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
+    width: 100%;
     padding-bottom: 20px;
     border: 10px solid transparent;
     padding: 15px;
     border-image: url('img/border.png') 30 round;
     /*border-radius: 10px;*/
+    justify-items: center;
 }
 .cards p{
-    position: absolute;
+    position: static;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     text-transform: uppercase;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0;
 }
 .cards span:not(#date){
     text-align: center;
@@ -59,7 +64,8 @@ body{
     padding: 1.25rem;
     padding-top: 30px;
     min-height: 125px;
-    width:200px;
+    width: 100%;
+    max-width: 240px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -78,4 +84,19 @@ animation: pulse 2s infinite;
     text-align: center;
     display: block;
     margin-bottom: 20px;
+}
+
+@media (max-width: 520px){
+    body{
+        padding: 16px;
+    }
+
+    .dashboard{
+        min-height: auto;
+        margin: 1rem auto;
+    }
+
+    .cards{
+        grid-template-columns: 1fr;
+    }
 }
